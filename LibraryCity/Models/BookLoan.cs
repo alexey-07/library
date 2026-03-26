@@ -19,9 +19,9 @@ public partial class BookLoan
 
     public int IdBook { get; set; }
 
-    public virtual Book IdBookNavigation { get; set; } = null!;
+    public virtual Book Book { get; set; } = null!;
 
-    public virtual ReadBilet IdReadBiletNavigation { get; set; } = null!;
+    public virtual ReadBilet ReadBilet { get; set; } = null!;
 
-    public virtual Status IdStatusNavigation { get; set; } = null!;
+    public virtual Status Status { get; set; } = null!;
 }

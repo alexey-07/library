@@ -29,9 +29,9 @@ public partial class Book
 
     public virtual ICollection<BookLoan> BookLoans { get; set; } = new List<BookLoan>();
 
-    public virtual Athor IdAthorNavigation { get; set; } = null!;
+    public virtual Athor Athor { get; set; } = null!;
 
-    public virtual Genre IdGenreNavigation { get; set; } = null!;
+    public virtual Genre Genre { get; set; } = null!;
 
-    public virtual PublishingHouse IdPublishingNavigation { get; set; } = null!;
+    public virtual PublishingHouse PublishingHouse { get; set; } = null!;
 }

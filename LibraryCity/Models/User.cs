@@ -21,7 +21,8 @@ public partial class User
 
     public int IdReadBilet { get; set; }
 
-    public virtual ReadBilet IdReadBiletNavigation { get; set; } = null!;
+    public virtual ReadBilet ReadBilet { get; set; } = null!;
 
-    public virtual Role IdRoleNavigation { get; set; } = null!;
+    public virtual Role Role { get; set; } = null!;
+    public string FullName => $"{Surname} {Name} {Patronymic}";
 }

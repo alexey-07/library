@@ -68,15 +68,15 @@ public partial class LibraryCityContext : DbContext
             entity.Property(e => e.Page).HasColumnName("page");
             entity.Property(e => e.Year).HasColumnName("year");
 
-            entity.HasOne(d => d.IdAthorNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Athor).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdAthor)
                 .HasConstraintName("books_id_athor_fkey");
 
-            entity.HasOne(d => d.IdGenreNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.Genre).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdGenre)
                 .HasConstraintName("books_id_genre_fkey");
 
-            entity.HasOne(d => d.IdPublishingNavigation).WithMany(p => p.Books)
+            entity.HasOne(d => d.PublishingHouse).WithMany(p => p.Books)
                 .HasForeignKey(d => d.IdPublishing)
                 .HasConstraintName("books_id_publishing_fkey");
         });
@@ -95,15 +95,15 @@ public partial class LibraryCityContext : DbContext
             entity.Property(e => e.IdReadBilet).HasColumnName("id_read_bilet");
             entity.Property(e => e.IdStatus).HasColumnName("id_status");
 
-            entity.HasOne(d => d.IdBookNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.Book).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdBook)
                 .HasConstraintName("book_loans_id_book_fkey");
 
-            entity.HasOne(d => d.IdReadBiletNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.ReadBilet).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdReadBilet)
                 .HasConstraintName("book_loans_id_read_bilet_fkey");
 
-            entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.BookLoans)
+            entity.HasOne(d => d.Status).WithMany(p => p.BookLoans)
                 .HasForeignKey(d => d.IdStatus)
                 .HasConstraintName("book_loans_id_status_fkey");
         });
@@ -175,11 +175,11 @@ public partial class LibraryCityContext : DbContext
             entity.Property(e => e.Patronymic).HasColumnName("patronymic");
             entity.Property(e => e.Surname).HasColumnName("surname");
 
-            entity.HasOne(d => d.IdReadBiletNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.ReadBilet).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdReadBilet)
                 .HasConstraintName("users_id_read_bilet_fkey");
 
-            entity.HasOne(d => d.IdRoleNavigation).WithMany(p => p.Users)
+            entity.HasOne(d => d.Role).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdRole)
                 .HasConstraintName("users_id_role_fkey");
         });
